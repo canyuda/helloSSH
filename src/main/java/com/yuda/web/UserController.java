@@ -27,7 +27,7 @@ public class UserController {
     public String list(Model model) {
         List<User> list = userService.list();
         model.addAttribute("userList", list);
-        return "list_page";
+        return "aa";
     }
 
 }
