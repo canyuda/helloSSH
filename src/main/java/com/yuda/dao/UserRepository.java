@@ -10,5 +10,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * Package_name :   com.yuda.com.yuda.dao
  * Description  :   TODO
  */
-public interface UserRepository extends JpaRepository<User,Integer> {
+public interface UserRepository extends JpaRepository<User, Integer> {
+    User findUserById(Integer id);
 }

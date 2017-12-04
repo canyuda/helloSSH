@@ -28,7 +28,7 @@
     <!-- 2. 运行使用'/'做映射 -->
     <mvc:default-servlet-handler/>
     <!--映射静态资源,和上面那个一样的作用,不过功能好像更加强大,可以映射classpath里面的静态资源-->
-    <mvc:resources mapping="/resources/**" location="/resources/"/>
+    <mvc:resources mapping="/**" location="/resources/"/>
 
     <!--thymeleaf模板解析器-->
     <bean class="org.thymeleaf.templateresolver.ServletContextTemplateResolver" id="templateResolver">
@@ -81,5 +81,12 @@
         <property name="exposeSpringMacroHelpers" value="true"/>
         <property name="requestContextAttribute" value="request"/>
         <property name="order" value="0"/>
+    </bean>
+
+    <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass"
+                  value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
     </bean>
 </beans>
